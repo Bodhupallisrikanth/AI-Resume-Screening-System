@@ -1,24 +1,24 @@
-# AI Resume Screening System — Week 1: Project Planning and Dataset Scoping
+# AI Resume Screening System — Week 2: Data Cleaning and Transformation
 
-Week 1 deliverable for the Virtual Data Science Apprenticeship (Python Specialist Intern track). This week covers the planning phase of the AI Resume Screening System — a Python-based application that parses resumes, extracts skills and experience, and ranks candidates against a job description.
+Week 2 deliverable for the Virtual Data Science Apprenticeship (Python Specialist Intern track). This week documents the data-wrangling strategy that turns raw, noisy resume and job-description text into a clean, structured, analysis-ready dataset.
 
 ## Contents
 
-- `Week1_Project_Planning_and_Dataset_Scoping.docx` — full project proposal
+- `Week2_Data_Cleaning_and_Transformation.docx` — full cleaning & transformation plan
 
 ## What's in the Report
 
-- **Objectives & Scope** — what the four-week project will and will not deliver
-- **Datasets Selected**
-  | Dataset | Source | Purpose |
-  |---|---|---|
-  | Resume Dataset | Kaggle (Snehaan Bhawal) | ~2,400+ labeled resumes across job categories |
-  | LinkedIn Job Postings | Kaggle | Real-world job descriptions for similarity scoring |
-- **High-Level Workflow** — Data Acquisition → Cleaning → Feature Engineering → EDA & Modeling → Scoring & Reporting
-- **Tools** — Python 3.10+, pandas, numpy, scikit-learn, nltk/spaCy, matplotlib, seaborn
-- **Anticipated Challenges** — inconsistent resume formatting, non-standardized skill terminology, small dataset size
-- **Validation Checkpoints** — one per remaining week, so progress can be audited end to end
+- **Data Quality Issues Identified** — duplicates, missing fields, inconsistent casing/whitespace, PDF boilerplate noise, outlier/malformed rows, non-standardized skill naming
+- **Cleaning Strategy**
+  - Deduplication (exact + near-duplicate via TF-IDF cosine similarity)
+  - Missing-value handling with logged imputation
+  - Outlier detection (token-length thresholds, IQR analysis)
+  - Text normalization (lowercasing, lemmatization, boilerplate removal)
+  - Skill normalization (synonym dictionary, fuzzy matching)
+- **Transformation Pipeline** — Raw Text → Deduplicate → Handle Missing → Normalize Text → Extract & Normalize Skills → Clean Dataset
+- **Feature Engineering** — TF-IDF vectors, scaled numeric features, encoded labels, binary skills-presence matrix
+- **Tools** — pandas, numpy, re, nltk/spaCy, scikit-learn, textdistance/rapidfuzz
 
 ## Status
 
-Planning complete. Proceeds into Week 2 (data cleaning and transformation).
+Cleaning and transformation plan complete. Proceeds into Week 3 (exploratory data analysis).
