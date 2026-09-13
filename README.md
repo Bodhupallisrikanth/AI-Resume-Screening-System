@@ -1,25 +1,21 @@
-# AI Resume Screening System — Week 3: EDA and Visualization Strategy
+# AI Resume Screening System — Week 4: ML Model Selection and Evaluation Plan
 
-Week 3 deliverable for the Virtual Data Science Apprenticeship (Python Specialist Intern track). This week plans the exploratory data analysis that turns the Week 2 cleaned dataset into concrete insights ahead of modeling.
+Week 4 deliverable for the Virtual Data Science Apprenticeship (Python Specialist Intern track). This week defines how the AI Resume Screening System selects, trains, and evaluates its machine learning models — the final step in the project's design.
 
 ## Contents
 
-- `Week3_EDA_and_Visualization_Strategy.docx` — full EDA and visualization plan
+- `Week4_ML_Model_Selection_and_Evaluation.docx` — full model selection and evaluation plan
 
 ## What's in the Report
 
-- **EDA Objectives** — category-imbalance detection, text-property characterization, discriminative-skill identification, feature/category relationships, residual data-quality checks
-- **Planned Visualizations**
-  - Category distribution — bar chart
-  - Resume length — histogram / box plot
-  - Skill frequency — word cloud + top-20 bar chart
-  - Skill-by-category heatmap
-  - Years-of-experience by category — violin plot
-  - TF-IDF term structure — PCA/t-SNE projection
-- **Library Mapping** — matplotlib, seaborn, wordcloud, scikit-learn (PCA/t-SNE), pandas
-- **EDA Workflow** — Load Clean Data → Univariate Analysis → Category Comparisons → Text/Skill Analysis → Document Insights
-- **Findings Plan** — every chart paired with written interpretation, plus a consolidated key-insights summary feeding directly into Week 4 modeling decisions
+- **Problem Framing** — Task A: resume classification into job categories (supervised); Task B: resume-to-job similarity scoring (unsupervised)
+- **Candidate Classification Models** — Logistic Regression (baseline), Multinomial Naive Bayes, Random Forest, Linear-kernel SVM, each with a stated rationale
+- **Similarity Scoring Approach** — TF-IDF cosine similarity baseline, skill-overlap enhancement, embedding-based stretch goal
+- **Evaluation Metrics** — accuracy, precision, recall, F1, macro-averaged F1 (primary metric), confusion matrix, ROC-AUC
+- **Workflow** — Train/Val/Test Split → Train Candidate Models → Evaluate & Compare → Select Best Model → Error Analysis
+- **Validation Strategy** — stratified 70/15/15 split, 5-fold stratified cross-validation, test set touched only once
+- **Practical Applicability** — explainable, auditable outputs suited to a real hiring workflow
 
 ## Status
 
-EDA and visualization plan complete. Proceeds into Week 4 (model selection and evaluation).
+Model selection and evaluation plan complete. This closes out the four-week design phase for the AI Resume Screening System.
